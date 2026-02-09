@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pitch Better, Get Funded Faster — Humble Conviction (Simulation)</title>
+  <meta name="description" content="A calm, high-signal landing page simulation blending Humble Conviction tone with a Maven-like structure." />
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --panel:#10141c;
+      --panel2:#0f1219;
+      --text:#e8eaf0;
+      --muted:#b3b9c8;
+      --faint:#7f879b;
+      --line:#202634;
+      --accent:#7c5cff;
+      --accent2:#36d399;
+      --warn:#fbbf24;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.25), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(54,211,153,.14), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(251,191,36,.10), transparent 55%),
+        var(--bg);
+      letter-spacing: .1px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 28px 22px 90px; }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding: 14px 0 8px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .mark{
+      width:34px; height:34px; border-radius: 10px;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(54,211,153,1));
+      box-shadow: 0 12px 30px rgba(124,92,255,.25);
+    }
+    .brand small{ display:block; color:var(--muted); font-weight:600; margin-top:2px; }
+    .nav{
+      display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav a{ padding:8px 10px; border-radius: 999px; }
+    .nav a:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(54,211,153,.95));
+      border-color: transparent;
+      box-shadow: 0 14px 40px rgba(124,92,255,.22);
+      color:#0b0d12;
+    }
+    .btn.primary:hover{ filter: brightness(1.02); }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(16,20,28,.7);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .dot{ width:9px; height:9px; border-radius: 999px; background: var(--accent2); box-shadow: 0 0 0 4px rgba(54,211,153,.12); }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: start;
+      margin-top: 18px;
+    }
+    .card{
+      background: rgba(16,20,28,.72);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroMain{ padding: 26px; }
+    h1{
+      margin: 12px 0 10px;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -.6px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.55;
+      max-width: 70ch;
+    }
+    .callouts{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 18px 0 18px;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .kpi{
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .kpi b{ display:block; font-size: 14px; }
+    .kpi span{ display:block; color: var(--muted); margin-top: 4px; font-size: 13px; line-height:1.3; }
+    .heroAside{ padding: 18px; }
+    .asideBox{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+    .priceRow{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      margin: 10px 0 4px;
+    }
+    .price{
+      font-size: 30px;
+      letter-spacing: -.4px;
+      font-weight: 800;
+    }
+    .subprice{
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .asideMeta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0 12px;
+    }
+    .pill{
+      padding: 10px 10px;
+      border-radius: 14px;
+      background: rgba(16,20,28,.65);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.35;
+    }
+    .pill b{ color: var(--text); font-weight:700; }
+    .asideActions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    .fineprint{ color: var(--faint); font-size: 12.5px; line-height:1.45; margin-top: 12px; }
+    .section{
+      margin-top: 22px;
+      padding: 22px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -.2px;
+    }
+    .muted{ color: var(--muted); }
+    .box{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .list li{ margin: 8px 0; }
+    .tagrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px; }
+    .tag{
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.12);
+      border: 1px solid rgba(124,92,255,.18);
+      color: #d8d1ff;
+      font-size: 12.5px;
+    }
+    .tag.green{
+      background: rgba(54,211,153,.10);
+      border-color: rgba(54,211,153,.18);
+      color: #c9ffea;
+    }
+    .tag.yellow{
+      background: rgba(251,191,36,.10);
+      border-color: rgba(251,191,36,.18);
+      color: #ffe7b0;
+    }
+    .curriculum{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .module{
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 10px;
+    }
+    .moduleHead{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+    }
+    .module h3{
+      margin: 0;
+      font-size: 15.5px;
+      letter-spacing: -.15px;
+      line-height:1.25;
+    }
+    .module small{
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding-top: 2px;
+      white-space:nowrap;
+    }
+    .module p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 13.6px;
+    }
+    details{
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 12px 14px;
+    }
+    details + details{ margin-top: 10px; }
+    summary{
+      cursor:pointer;
+      color: var(--text);
+      font-weight: 650;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    summary span{ color: var(--muted); font-weight:600; font-size: 13px; }
+    details p{ color: var(--muted); margin: 10px 0 0; line-height: 1.55; font-size: 13.6px; }
+    .footer{
+      margin-top: 26px;
+      padding: 18px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      color: var(--faint);
+      font-size: 13px;
+    }
+    .mini{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .sep{ color: rgba(255,255,255,.18); }
+    .note{
+      margin-top: 14px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: rgba(124,92,255,.10);
+      border: 1px solid rgba(124,92,255,.18);
+      color: #ddd7ff;
+      line-height:1.5;
+      font-size: 13.6px;
+    }
+    .note b{ color:#fff; }
+    .twocta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;
+    }
+    .profile{
+      display:flex; gap:12px; align-items:flex-start;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .avatar{
+      width:64px; height:64px; border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      flex: 0 0 auto;
+    }
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .curriculum{ grid-template-columns: 1fr; }
+      .kpis{ grid-template-columns: 1fr; }
+      h1{ font-size: 38px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand" aria-label="Brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <div>Humble Conviction</div>
+          <small>Course landing page simulation</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Page">
+        <a href="#overview">Overview</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#proof">Proof</a>
+        <a href="#faq">FAQ</a>
+        <a href="#enroll" class="btn">Get the spec</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="card heroMain">
+        <div class="badge"><span class="dot"></span> Calm, high-signal, skeptical-peer-safe</div>
+        <h1 id="title"></h1>
+        <p class="lead" id="subtitle"></p>
+
+        <div class="callouts" id="callouts"></div>
+
+        <div class="twocta">
+          <a class="btn primary" href="#enroll">View the “good-enough” page</a>
+          <button class="btn" id="copySpecBtn" type="button">Copy page spec</button>
+        </div>
+
+        <div class="kpis" id="kpis"></div>
+
+        <div class="note" id="heroNote"></div>
+      </div>
+
+      <aside class="card heroAside" id="enroll">
+        <div class="asideBox">
+          <div class="priceRow">
+            <div>
+              <div class="price" id="price"></div>
+              <div class="subprice" id="priceNote"></div>
+            </div>
+            <span class="badge" style="border-color: rgba(255,255,255,.12);">
+              <span style="width:9px;height:9px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 4px rgba(251,191,36,.12);"></span>
+              Beta cohort
+            </span>
+          </div>
+
+          <div class="asideMeta" id="asideMeta"></div>
+
+          <div class="asideActions">
+            <a class="btn primary" href="#cta">Enroll (placeholder)</a>
+            <a class="btn" href="#curriculum">See curriculum</a>
+          </div>
+
+          <div class="fineprint" id="fineprint"></div>
+
+          <div class="profile">
+            <!-- Put your photo file in the SAME folder as this HTML and name it 'brian.png' (or change CONFIG.photoSrc) -->
+            <img class="avatar" id="avatar" alt="Instructor photo" />
+            <div>
+              <div style="font-weight:750; margin-bottom:4px;" id="profileName"></div>
+              <div class="muted" style="font-size:13.2px; line-height:1.45;" id="profileBio"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="asideBox">
+          <h2 style="margin:0 0 8px;font-size:16px;">What you’ll walk away with</h2>
+          <ul class="list" id="outcomes"></ul>
+          <div class="tagrow" id="tags"></div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card section" id="overview">
+      <h2>Overview</h2>
+      <div class="grid2">
+        <div class="box">
+          <h2 style="font-size:16px;margin:0 0 8px;">Who this is for</h2>
+          <ul class="list" id="whoFor"></ul>
+        </div>
+        <div class="box">
+          <h2 style="font-size:16px;margin:0 0 8px;">Who this is not for</h2>
+          <ul class="list" id="whoNot"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="curriculum">
+      <h2>Curriculum</h2>
+      <div class="curriculum">
+        <div>
+          <div class="muted" style="margin-bottom:10px; line-height:1.55;" id="curriculumIntro"></div>
+          <div id="modules"></div>
+        </div>
+
+        <div>
+          <div class="box">
+            <h2 style="font-size:16px;margin:0 0 8px;">Format</h2>
+            <ul class="list" id="format"></ul>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="box">
+            <h2 style="font-size:16px;margin:0 0 8px;">Deliverables</h2>
+            <ul class="list" id="deliverables"></ul>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="box">
+            <h2 style="font-size:16px;margin:0 0 8px;">Guarantee (optional)</h2>
+            <p class="muted" id="guarantee" style="margin:0;line-height:1.55;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="proof">
+      <h2>Proof</h2>
+      <div class="grid2">
+        <div class="box">
+          <h2 style="font-size:16px;margin:0 0 8px;">Credibility (non-cringey version)</h2>
+          <p class="muted" id="credibility" style="margin:0;line-height:1.55;"></p>
+          <div class="tagrow" id="credTags"></div>
+        </div>
+        <div class="box">
+          <h2 style="font-size:16px;margin:0 0 8px;">Testimonials (placeholder)</h2>
+          <ul class="list" id="testimonials"></ul>
+        </div>
+      </div>
+      <div class="note" id="antiGoals"></div>
+    </section>
+
+    <section class="card section" id="faq">
+      <h2>FAQ</h2>
+      <div id="faqs"></div>
+    </section>
+
+    <section class="card section" id="cta">
+      <h2>Ready when you are</h2>
+      <p class="muted" id="ctaText" style="line-height:1.6; max-width: 78ch;"></p>
+      <div class="twocta">
+        <a class="btn primary" href="#enroll">Enroll (placeholder)</a>
+        <a class="btn" href="#overview">Read overview again</a>
+      </div>
+      <div class="fineprint" style="margin-top:10px;">
+        Tip: Once you like this “shape,” you can hand the spec + this HTML to any designer/dev and get a polished version without losing the intent.
+      </div>
+    </section>
+
+    <div class="footer card">
+      <div class="mini">
+        <span>© <span id="year"></span> Humble Conviction</span>
+        <span class="sep">•</span>
+        <span class="muted">Good-enough simulation file</span>
+      </div>
+      <div class="mini">
+        <span class="muted">Edit the CONFIG block in the script</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /******************************************************************
+     * CONFIG — V1 layout preserved. Only language/content updated.
+     ******************************************************************/
+    const CONFIG = {
+      // Hero
+      title: "Pitch Better, Get Funded Faster",
+      subtitle:
+        "A course for founders who don’t need louder storytelling — they need cleaner thinking, tighter sequencing, and a way to earn real investor curiosity without overexplaining.",
+
+      callouts: [
+        "Clarity beats cleverness",
+        "Restraint reads as confidence",
+        "Built for real meetings (not demo days)",
+        "No hype. No pitch theatrics."
+      ],
+
+      heroNoteHTML:
+        "<b>Simulation mindset:</b> This is a high-fidelity rehearsal of a page. It aims to be true to the course — not maximally salesy. If something feels inflated, we should narrow the promise, not polish the copy.",
+
+      kpis: [
+        { top: "4–6", bottom: "hours total" },
+        { top: "3", bottom: "parts (pitch → conversation → control)" },
+        { top: "1", bottom: "goal: earn “tell me more”" }
+      ],
+
+      // Pricing card
+      price: "$99",
+      priceNote: "One-time • includes updates • intentionally small",
+      asideMeta: [
+        { label: "Time", value: "4–6 hours total" },
+        { label: "Level", value: "Pre-seed → Series A" },
+        { label: "Focus", value: "Conversation, not slides" },
+        { label: "Access", value: "Lifetime (placeholder)" }
+      ],
+      fineprint:
+        "This is intentionally not “salesy.” Replace pricing, cohort dates, and CTA behavior with your actual offer decisions.",
+
+      // Instructor box (photo + short bio)
+      profileName: "Brian (Humble Conviction)",
+      // Put your uploaded image in the same folder and name it brian.png
+      photoSrc: "brian.png",
+      profileBio:
+        "I’ve coached founders through the moment that matters: the first 30 seconds — and everything that follows when investors interrupt, challenge, and lean in. The breakthrough rarely comes from polishing; it comes from stripping down to what matters and holding the frame with calm, credible presence.",
+
+      // Outcomes
+      outcomes: [
+        "A 30-second pitch that’s clear enough to earn “tell me more.”",
+        "A method for deciding what belongs early vs. what belongs later.",
+        "A way to prevent confusion before it poisons the meeting.",
+        "A calm approach to clarification, challenge, and curiosity without spiraling into overtalking.",
+        "A repeatable “answer → one point → stop” pattern that reads as leadership."
+      ],
+
+      tags: [
+        { text: "Clarity + restraint", tone: "tag" },
+        { text: "Control without domination", tone: "tag green" },
+        { text: "Speak like a human", tone: "tag yellow" }
+      ],
+
+      // Fit
+      whoFor: [
+        "Founders who have something real, but pitches get messy under pressure.",
+        "Teams who over-explain because they’re afraid of leaving something out.",
+        "Anyone raising who wants to sound confident without sounding delusional.",
+        "People who want fewer unforced errors, not more “tips and tricks.”"
+      ],
+      whoNot: [
+        "If you want a memorized script or a deck template that does the thinking for you.",
+        "If you want hype, hacks, theatrics, or fake urgency.",
+        "If you want guaranteed funding outcomes (nobody can promise that).",
+        "If you’re looking for generic startup 101."
+      ],
+
+      // Curriculum
+      curriculumIntro:
+        "The structure is simple: first you earn the conversation, then you learn to navigate it. This isn’t about saying more — it’s about choosing what matters, sequencing it, and holding the frame with humble conviction.",
+
+      modules: [
+        {
+          code: "P1",
+          title: "Why 30 seconds tells the truth about your business",
+          desc: "The constraint is diagnostic. If you can’t say it clearly, you haven’t decided what matters — and investors will feel that immediately."
+        },
+        {
+          code: "P1",
+          title: "What belongs in a 30-second pitch (and what to leave out)",
+          desc: "Category, who it’s for, why it might matter, and one credibility signal. Omission isn’t evasion — it’s sequencing."
+        },
+        {
+          code: "P2",
+          title: "Confusion: the failure state you don’t ‘handle’ — you prevent",
+          desc: "Orientation beats intrigue. Confusion poisons everything downstream and almost never recovers into curiosity."
+        },
+        {
+          code: "P2",
+          title: "Clarification: answer just enough without reopening the pitch",
+          desc: "The hinge moment. Productive clarification advances; remedial clarification repairs. Learn to resolve ambiguity and stop."
+        },
+        {
+          code: "P2",
+          title: "Challenge: calm under pressure without defensiveness",
+          desc: "Investors evaluate you here. Direct answer, one supporting point, stop. Humble conviction is a delivery discipline."
+        },
+        {
+          code: "P2",
+          title: "Curiosity: the win — and how founders blow it",
+          desc: "When investors lean in, founders tend to overtalk and overspecify the future. Explore without committing; leave space."
+        },
+        {
+          code: "P3",
+          title: "Investor types: same pitch, different filters",
+          desc: "Angels, emerging funds, established funds: what stays constant (clarity) and what changes (filters, tolerance, pacing)."
+        },
+        {
+          code: "P3",
+          title: "Context & control: the meeting isn’t a presentation",
+          desc: "Investor meetings are interrupt-driven and evaluative. Lead with the 30-second pitch, keep the deck optional, and own the room without dominating it."
+        }
+      ],
+
+      // Format + deliverables
+      format: [
+        "Short lessons + blunt prompts (built for busy founders)",
+        "Write it → say it out loud → cut 10% of the words",
+        "Interrupt-driven practice (like real meetings)",
+        "Less presentation mode, more conversation control"
+      ],
+      deliverables: [
+        "30-second pitch worksheet (plain language, no fluff)",
+        "A “must-know vs nice-to-know” filter for what to say first",
+        "A question-handling pattern for clarification/challenge/curiosity",
+        "A simple rehearsal loop you can reuse before any meeting"
+      ],
+
+      guarantee:
+        "Optional: set a policy you actually mean. A good default is: if you complete the work and it doesn’t improve clarity, ask for a refund. (Placeholder.)",
+
+      // Proof
+      credibility:
+        "This is distilled from repeating patterns: founders who are smart and capable still lose investors early because they overload, hedge, or accidentally invite confusion. The fastest improvements come from cleaner thinking, not prettier slides.",
+
+      credTags: ["Clarity > completeness", "Restraint = confidence", "Conversation control", "Humble Conviction"],
+
+      testimonials: [
+        "“The 30-second constraint changed everything. We finally got ‘tell me more.’” — Founder (placeholder)",
+        "“This made me stop pitching and start having investor conversations.” — Operator (placeholder)",
+        "“I realized my problem wasn’t speaking — it was choosing what mattered.” — Founder (placeholder)"
+      ],
+
+      antiGoals:
+        "<b>Anti-goals (to preserve taste):</b> no fake urgency, no inflated outcomes, no “fundraising hacks,” no manipulative scarcity. No ‘VC-speak.’ This should read like a clear memo from someone you’d trust in a high-stakes moment.",
+
+      faqs: [
+        {
+          q: "Will this get me funded?",
+          a: "Nothing can promise that. What this improves is the part you control: clarity, composure, and the ability to earn real investor curiosity instead of creating confusion."
+        },
+        {
+          q: "Is this about a deck?",
+          a: "No. Decks matter, but most early failures happen before a deck can help. This is about what you say first, how you answer, and when you stop."
+        },
+        {
+          q: "What stage is it for?",
+          a: "Most useful from pre-seed through Series A, especially when you have a real product/story but the pitch gets overloaded or fragile under pressure."
+        },
+        {
+          q: "Is this a script?",
+          a: "No. It’s a thinking and sequencing discipline. The goal is to internalize clarity so you can stay flexible when the meeting becomes nonlinear."
+        },
+        {
+          q: "How long does it take?",
+          a: "4–6 hours is a realistic first pass. The real value is that you can reuse the method forever."
+        }
+      ],
+
+      ctaText:
+        "If this page feels calm and specific (instead of salesy), that’s intentional. The next step is to swap placeholders with your real decisions (offer, cohort, guarantee), then test the pitch on someone who doesn’t owe you polite feedback. Clarity beats cleverness — every time."
+    };
+
+    /******************************************************************
+     * RENDER — unchanged from V1
+     ******************************************************************/
+    const $ = (id) => document.getElementById(id);
+
+    $("title").textContent = CONFIG.title;
+    $("subtitle").textContent = CONFIG.subtitle;
+    $("price").textContent = CONFIG.price;
+    $("priceNote").textContent = CONFIG.priceNote;
+    $("guarantee").textContent = CONFIG.guarantee;
+    $("credibility").textContent = CONFIG.credibility;
+    $("antiGoals").innerHTML = CONFIG.antiGoals;
+    $("ctaText").textContent = CONFIG.ctaText;
+    $("year").textContent = new Date().getFullYear();
+
+    $("heroNote").innerHTML = CONFIG.heroNoteHTML;
+
+    $("profileName").textContent = CONFIG.profileName;
+    $("profileBio").textContent = CONFIG.profileBio;
+    $("avatar").src = CONFIG.photoSrc;
+
+    // callouts
+    const calloutsEl = $("callouts");
+    CONFIG.callouts.forEach(t => {
+      const b = document.createElement("span");
+      b.className = "badge";
+      b.textContent = t;
+      calloutsEl.appendChild(b);
+    });
+
+    // kpis
+    const kpisEl = $("kpis");
+    CONFIG.kpis.forEach(k => {
+      const d = document.createElement("div");
+      d.className = "kpi";
+      d.innerHTML = `<b>${k.top}</b><span>${k.bottom}</span>`;
+      kpisEl.appendChild(d);
+    });
+
+    // aside meta
+    const asideMetaEl = $("asideMeta");
+    CONFIG.asideMeta.forEach(m => {
+      const d = document.createElement("div");
+      d.className = "pill";
+      d.innerHTML = `<b>${m.label}:</b> ${m.value}`;
+      asideMetaEl.appendChild(d);
+    });
+
+    // outcomes
+    const outcomesEl = $("outcomes");
+    CONFIG.outcomes.forEach(x => {
+      const li = document.createElement("li");
+      li.textContent = x;
+      outcomesEl.appendChild(li);
+    });
+
+    // tags
+    const tagsEl = $("tags");
+    CONFIG.tags.forEach(t => {
+      const s = document.createElement("span");
+      s.className = t.tone;
+      s.textContent = t.text;
+      tagsEl.appendChild(s);
+    });
+
+    // who for/not
+    const whoForEl = $("whoFor");
+    CONFIG.whoFor.forEach(x => { const li=document.createElement("li"); li.textContent=x; whoForEl.appendChild(li); });
+    const whoNotEl = $("whoNot");
+    CONFIG.whoNot.forEach(x => { const li=document.createElement("li"); li.textContent=x; whoNotEl.appendChild(li); });
+
+    // curriculum intro + modules
+    $("curriculumIntro").textContent = CONFIG.curriculumIntro;
+
+    const modulesEl = $("modules");
+    CONFIG.modules.forEach(m => {
+      const d = document.createElement("div");
+      d.className = "module";
+      d.innerHTML = `
+        <div class="moduleHead">
+          <h3>${m.title}</h3>
+          <small>${m.code}</small>
+        </div>
+        <p>${m.desc}</p>
+      `;
+      modulesEl.appendChild(d);
+    });
+
+    // format/deliverables
+    const formatEl = $("format");
+    CONFIG.format.forEach(x => { const li=document.createElement("li"); li.textContent=x; formatEl.appendChild(li); });
+    const delivEl = $("deliverables");
+    CONFIG.deliverables.forEach(x => { const li=document.createElement("li"); li.textContent=x; delivEl.appendChild(li); });
+
+    // credibility tags
+    const credTagsEl = $("credTags");
+    CONFIG.credTags.forEach(t => {
+      const s = document.createElement("span");
+      s.className = "tag";
+      s.textContent = t;
+      credTagsEl.appendChild(s);
+    });
+
+    // testimonials
+    const testEl = $("testimonials");
+    CONFIG.testimonials.forEach(x => {
+      const li = document.createElement("li");
+      li.textContent = x;
+      testEl.appendChild(li);
+    });
+
+    // FAQ
+    const faqsEl = $("faqs");
+    CONFIG.faqs.forEach(f => {
+      const d = document.createElement("details");
+      const sum = document.createElement("summary");
+      sum.innerHTML = `<div>${f.q}</div><span>+</span>`;
+      const p = document.createElement("p");
+      p.textContent = f.a;
+      d.appendChild(sum);
+      d.appendChild(p);
+      d.addEventListener("toggle", () => {
+        const open = d.open;
+        sum.querySelector("span").textContent = open ? "−" : "+";
+      });
+      faqsEl.appendChild(d);
+    });
+
+    // copy spec button
+    $("copySpecBtn").addEventListener("click", async () => {
+      const spec = [
+        `TITLE: ${CONFIG.title}`,
+        `SUBTITLE: ${CONFIG.subtitle}`,
+        ``,
+        `TONE CONSTRAINTS: calm, high-signal, skeptical-peer-safe; no hype; no fake urgency; no manipulative scarcity; no VC-speak.`,
+        ``,
+        `STRUCTURE (Maven-like): Hero → Who for/Not → Curriculum → Proof → FAQ → CTA.`,
+        ``,
+        `MODULES:`,
+        ...CONFIG.modules.map(m => `- ${m.code}: ${m.title}`),
+        ``,
+        `ANTI-GOALS: ${CONFIG.antiGoals.replace(/<[^>]*>/g,"")}`
+      ].join("\n");
+      try{
+        await navigator.clipboard.writeText(spec);
+        const btn = $("copySpecBtn");
+        const prev = btn.textContent;
+        btn.textContent = "Copied ✓";
+        setTimeout(()=>btn.textContent = prev, 1200);
+      }catch(e){
+        alert("Copy failed (browser blocked clipboard). You can manually select the CONFIG block in the file.");
+      }
+    });
+  </script>
+</body>
+</html>
